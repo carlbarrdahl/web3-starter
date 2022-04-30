@@ -8,7 +8,7 @@ export default {
   component: Layout,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
-    // layout: "fullscreen",
+    layout: "fullscreen",
   },
 } as ComponentMeta<typeof Layout>;
 

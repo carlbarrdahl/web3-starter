@@ -17,7 +17,7 @@ interface Props {
   title?: string;
 }
 const maxWidth = "container.xl";
-export default function Layout({ children, title = "Git DAO" }: Props) {
+export default function Layout({ children, title = "Web3 Starter" }: Props) {
   const borderColor = useColorModeValue("gray.100", "gray.700");
 
   return (
