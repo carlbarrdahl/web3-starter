@@ -18,6 +18,7 @@ yarn storybook
 
 #### Todo:
 - Add SIWE 
+- Add Hardhat
 - Add testing
     - React Testing Library (+ hooks)
     - MSW to mock external requests
