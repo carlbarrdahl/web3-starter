@@ -1,15 +1,23 @@
 # Web3 Starter
 
 
-#### Stack
+### Stack
 - Next.js
 - Chakra UI
 - Storybook
 - Wagmi (includes React Query)
 
+### Getting started
+```bash
+# Run Next.js dev server
+yarn dev
+
+# Run Storybook
+yarn storybook
+```
 
 #### Todo:
-Add testing:
-
-- React Testing Library (+ hooks)
-- MSW to mock external requests
+- Add SIWE 
+- Add testing
+    - React Testing Library (+ hooks)
+    - MSW to mock external requests
