@@ -1,0 +1,17 @@
+{
+  "name": "web3-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Carl Barrdahl",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn workspace @web3-starter/web dev",
+    "storybook": "yarn workspace @web3-starter/web storybook"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
+
+
