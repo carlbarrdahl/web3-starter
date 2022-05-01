@@ -22,6 +22,7 @@ yarn storybook
 
 - Add SIWE
 - Add Hardhat
+- Add TheGraph
 - Add testing
   - React Testing Library (+ hooks)
   - MSW to mock external requests
