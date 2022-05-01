@@ -19,7 +19,7 @@ yarn dev
 yarn storybook
 
 # Run Hardhat node
-yarn node
+yarn chain
 ```
 
 #### Todo:
