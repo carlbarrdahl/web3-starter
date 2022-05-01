@@ -16,31 +16,25 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
 task("docgen", "Generate NatSpec", async (taskArgs, hre) => {
   const contractNames = await hre.artifacts.getAllFullyQualifiedNames();
+  // TODO: get from config
   const ignore = ["console", "@openzeppelin"];
-  console.log(contractNames);
-  const abi = await Promise.all(
-    contractNames
-      .filter(
-        (contractName) => !ignore.some((name) => contractName.includes(name))
-      )
-      // .filter((contractName) => !contractName.includes("@openzeppelin"))
-      .map(async (contractName) => {
-        const [source, name] = contractName.split(":");
-        const { metadata } = (await hre.artifacts.getBuildInfo(contractName))
-          .output.contracts[source][name];
+  contractNames
+    .filter(
+      (contractName) => !ignore.some((name) => contractName.includes(name))
+    )
+    .map(async (contractName) => {
+      const [source, name] = contractName.split(":");
+      const { metadata } = (await hre.artifacts.getBuildInfo(contractName))
+        .output.contracts[source][name];
 
-        const { abi, devdoc, userdoc, ...rest } = JSON.parse(metadata).output;
-        console.log(rest);
-        fs.writeFileSync(
-          path.resolve(__dirname, "..", "web", "contracts", `${name}.json`),
-          JSON.stringify({ name, abi, devdoc, userdoc })
-        );
-        return { name, abi, devdoc, userdoc };
-        // console.log(JSON.stringify({ abi, devdoc, userdoc }, null, 2));
-      })
-  );
-
-  console.log(abi);
+      const { abi, devdoc, userdoc } = JSON.parse(metadata).output;
+      fs.writeFileSync(
+        // TODO: move path to config
+        path.resolve(__dirname, "..", "web", "contracts", `${name}.json`),
+        JSON.stringify({ name, abi, devdoc, userdoc })
+      );
+      return { name, abi, devdoc, userdoc };
+    });
 });
 
 // You need to export an object to set up your config
