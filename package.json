@@ -7,11 +7,17 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn workspace @web3-starter/web dev",
-    "storybook": "yarn workspace @web3-starter/web storybook"
+    "storybook": "yarn workspace @web3-starter/web storybook",
+    "chain": "yarn workspace @web3-starter/hardhat chain"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@nomiclabs/**",
+      "**/typescript",
+      "**/ts-node"
+    ]
+  }
 }
-
-

@@ -7,6 +7,7 @@
 - Storybook
 - Wagmi (includes React Query)
 - React Hook Form (+ zod schema resolver)
+- Hardhat
 
 ### Getting started
 
@@ -16,12 +17,14 @@ yarn dev
 
 # Run Storybook
 yarn storybook
+
+# Run Hardhat node
+yarn node
 ```
 
 #### Todo:
 
 - Add SIWE
-- Add Hardhat
 - Add TheGraph
 - Add testing
   - React Testing Library (+ hooks)
